@@ -5,12 +5,55 @@
  */
 package Entity;
 
+import java.util.List;
+import java.util.Objects;
+
 /**
  *
  * @author Axel
  */
 public class Tuteur {
     
-    //A FAIRE
+    private String email;
+    private String sexe;
+    private String description;
+    private double moyenne;
+    private List<String> categories;
+    
+
+    public Tuteur(String email, int sexe, String description, double moyenne, List<String> categories) {
+        this.email = email;
+        if (sexe == 1){
+            this.sexe = "Homme";
+        }else{
+            this.sexe = "Femme";
+        }
+        this.description = description;
+        this.moyenne = moyenne;
+        this.categories = categories;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+
+    public String getSexe() {
+        return sexe;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+
+    public double getMoyenne() {
+        return moyenne;
+    }
+    
+    public List<String> getCategories(){
+        return categories;
+    }
+    
     
 }
