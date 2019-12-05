@@ -8,7 +8,12 @@
     </head>
     <body>  
         <div class="container-fluid">
-            <div class="col-lg-3"><image href=""/></div>
+            <!-- Mise à jour de la grille bootstrap -->
+            <div class="col-lg-1"></div>
+            <div class="col-lg-4"><img src="Images/etudiant.png" alt="image_etudiant"/></div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4"><img src="Images/tuteur.png" alt="image_tuteur"/></div>
+            <div class="col-lg-1"></div>
         </div>
     </body>
 </html>
