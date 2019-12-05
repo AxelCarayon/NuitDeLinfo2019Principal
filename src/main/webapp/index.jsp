@@ -8,7 +8,7 @@
     </head>
     <body>  
         <div class="container-fluid">
-            <div class="col-lg-"></div>
+            <div class="col-lg-3"><image href=""/></div>
         </div>
     </body>
 </html>
