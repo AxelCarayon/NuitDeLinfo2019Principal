@@ -53,16 +53,72 @@ public class DAO {
         return moyenne;
 }
     
+    /**
+     * Affiche toutes les catégories d'un tuteur
+     * @param mail le mail du tuteur souhaité
+     * @return la listes de toutes les catégories d'un tuteur
+     * @throws SQLException 
+     */
+    public List<String> afficherCategories(String mail) throws SQLException{
+        List<String> resultat = new ArrayList<>();
+        String sql = "SELECT * FROM INTERETS WHERE MAIL = ?";
+        try (Connection connection = myDataSource.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, mail);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                String categorie = rs.getString("CATEGORIE");
+                resultat.add(categorie);
+            }
+        }catch (SQLException e){
+            throw e;
+        }
+        
+        return resultat;
+        
+    }
+    
     
     /**
      * Affiche la liste de tous les tuteurs
-     * @return Liste de tous les tuteurs
+     * @return la liste de tous les tuteurs
      * @throws SQLException 
      */
     public List<Tuteur> listeTuteurs() throws SQLException{
-        List<Tuteur> resultat = new ArrayList<Tuteur>();
-        //A FAIRE
+        List<Tuteur> resultat = new ArrayList<>();
+        String sql = "SELECT * FROM TUTEUR";
+        try (Connection connection = myDataSource.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                String email = rs.getString("MAIL");
+                int sexe = rs.getInt("SEXE");
+                String description = rs.getString("DESCRIPTION");
+                double moyenne = afficherMoyenne(email);
+                List<String> categories = afficherCategories(email);
+                Tuteur tuteur = new Tuteur(email,sexe,description,moyenne,categories);
+                resultat.add(tuteur);
+            }
+        }catch (SQLException e){
+            throw e;
+        }
         return resultat;
     } 
+    
+    public void supprimerTuteur() throws SQLException{
+        //TODO
+    }
+    
+    public void ajouterTuteur() throws SQLException{
+        //TODO
+    }
+    
+    public void ajouterInteretTuteur() throws SQLException{
+        //TODO
+    }
+    
+    public void supprimerInteretTuteur() throws SQLException{
+        //TODO
+    }
     
 }
