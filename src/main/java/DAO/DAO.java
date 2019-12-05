@@ -117,4 +117,8 @@ public class DAO {
         //TODO
     }
     
+    public void supprimerInteretTuteur() throws SQLException{
+        //TODO
+    }
+    
 }
