@@ -107,7 +107,22 @@ public class DAO {
     
     
     public void supprimerTuteur(String email) throws SQLException{
-        //TODO
+        String sql = "DELETE FROM INTERETS WHERE EMAIL = ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
+        sql = "DELETE FROM TUTEUR WHERE EMAIL= ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
     }
     
     public void ajouterTuteur(String email, int sexe, String description) throws SQLException{
@@ -137,7 +152,15 @@ public class DAO {
     }
     
     public void supprimerInteretTuteur(String email, String categorie) throws SQLException{
-        //TODO
+        String sql = "DELETE FROM INTERETS WHERE EMAIL = ? AND CATEGORIE = ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.setString(2, categorie);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
     }
     
 }
