@@ -49,12 +49,12 @@
                 <div class="row col-lg-10">
                     <div class="col-lg-12"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Organisation disponibles</a>
+                        <a href="restaurantsDisponibles" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Organisations disponibles</a>
                         <br/><h5 class="text-center font-weight-light">Retrouvez les enseignes où manger</h4>
                     </div>
                     <div class="col-lg-2"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Informations</a>
+                        <a href="pageConstruction.jsp" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Informations</a>
                         <br/><h5 class="text-center font-weight-light">Cliquez ici pour avoir plus d'informations</h4>
                     </div>
                 </div>    
