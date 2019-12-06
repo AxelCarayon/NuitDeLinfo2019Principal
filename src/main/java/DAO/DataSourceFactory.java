@@ -30,7 +30,7 @@ public class DataSourceFactory {
     }
     
     /* Connexion à la base de données 
-    String url = "jdbc:mysql://51.83.255.12:21/sosetudiantdb";
+    String url = "jdbc:mysql://localhost:3306/sosetudiantdb";
     String utilisateur = "admin";
     String motDePasse = "admin";
     Connection connexion = null;
