@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-lg-2"></div>
                     <div class="col-lg-5">
-                        <a href=""> 
+                        <a href="indexTuteur.jsp"> 
                             <img src="Images/tuteur.png" class="img-fluid rounded" alt="Responsive image"</div>
                         </a>
                         <br/><h5 class="text-center font-weight-light">Cliquez ici pour apporter votre aide</h4>
