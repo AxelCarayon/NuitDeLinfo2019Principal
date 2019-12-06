@@ -49,12 +49,12 @@
                 <div class="row col-lg-10">
                     <div class="col-lg-12"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Boursier</a>
+                        <a href="Feuilles/pageConstruction.jsp" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Boursier</a>
                         <br/><h5 class="text-center font-weight-light">CLiquez ici si vous disposez des bourses</h4>
                     </div>
                     <div class="col-lg-2"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Non boursier</a>
+                        <a href="Feuilles/pageConstruction.jsp" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Non boursier</a>
                         <br/><h5 class="text-center font-weight-light">Cliquez ici si vous n'avez pas les bourses</h4>
                     </div>
                 </div>    

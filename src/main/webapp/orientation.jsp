@@ -50,12 +50,12 @@
                 <div class="row col-lg-10">
                     <div class="col-lg-12"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Je sais ce que je veux faire</a>
+                        <a href="Feuilles/pageConstruction.jsp" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Je sais ce que je veux faire</a>
                         <br/><h5 class="text-center font-weight-light">Cliquez ici si vous avez une idée du domaine</h4>
                     </div>
                     <div class="col-lg-2"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Je ne sais pas ce que je veux faire</a>
+                        <a href="Feuilles/pageConstruction.jsp" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Je ne sais pas ce que je veux faire</a>
                         <br/><h5 class="text-center font-weight-light">Cliquez ici si vous ne savez pas quoi faire</h4>
                     </div>
                 </div>    

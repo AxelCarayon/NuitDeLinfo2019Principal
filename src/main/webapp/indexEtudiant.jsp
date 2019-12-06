@@ -94,7 +94,7 @@
                     
                     <!-- partie sante -->
                     <div class="col-lg-3 col-md-3">
-                    <a href="sante.jsp">
+                    <a href="Feuilles/infoSante.jsp">
                         <div class="row size-image-Logos"><img src="Images/LogoSante.png" class="img-fluid rounded" alt="Responsive image"></div>
                         <div class="col-lg-11 text-center">Sante</div>
                     </a>
