@@ -139,7 +139,7 @@ public class DAO {
     }
     
     public void ajouterInteretTuteur(String categorie,String email) throws SQLException{
-        String sql = "INSERT INTO INTERETS VALUES (?,?)";
+        String sql = "INSERT INTO INTERETS(categorie,mail) VALUES(?,?)";
         try (Connection myConnection = myDataSource.getConnection();
                 PreparedStatement statement = myConnection.prepareStatement(sql)) {
             statement.setString(1, categorie);
@@ -151,7 +151,7 @@ public class DAO {
     }
     
     public void supprimerInteretTuteur(String email, String categorie) throws SQLException{
-        String sql = "DELETE FROM INTERETS WHERE EMAIL = ? AND CATEGORIE = ?";
+        String sql = "DELETE FROM INTERETS WHERE MAIL = ? AND CATEGORIE = ?";
         try (Connection myConnection = myDataSource.getConnection();
                 PreparedStatement statement = myConnection.prepareStatement(sql)) {
             statement.setString(1, email);

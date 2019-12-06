@@ -36,16 +36,9 @@ public class DeleteTuteurServlet extends HttpServlet {
         String message;
 
         try {
-            String count = dao.supprimerTuteur(mail);
-            // Générer du JSON
-            if (count == 1) {
-                message = String.format("Tuteur %s supprimé", mail);
-            } else {
-                message = String.format("Tuteur %s inconnu", mail);
-            }
-        } catch (SQLIntegrityConstraintViolationException e) {
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            message = String.format("Impossible de supprimer '%s', ce code est utilisé", code);
+            dao.supprimerTuteur(mail);
+            message = String.format("Tuteur %s supprimé", mail);
+
         } catch (SQLException ex) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             message = ex.getMessage();
