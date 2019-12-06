@@ -21,9 +21,9 @@ import javax.sql.DataSource;
 public class DAO {
     
     private final DataSource myDataSource;
-    private String url = "jdbc:mysql://localhost:3306/sosetudiantdb";
-    private String utilisateur = "admin";
-    private String motDePasse = "admin";
+    private final String url = "jdbc:mysql://localhost:3306/sosetudiantdb";
+    private final String utilisateur = "admin";
+    private final String motDePasse = "admin";
     
     public DAO(DataSource dataSource) {
         this.myDataSource = dataSource;
@@ -132,7 +132,6 @@ public class DAO {
                  Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
             }
         }
-        return moyenne;
     }
     */
     
@@ -192,7 +191,6 @@ public class DAO {
                  Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
             }
         }
-        return moyenne;
     }
     */
     
@@ -235,17 +233,117 @@ public class DAO {
             }
         }catch (SQLException e){
             throw e;
-        } finally {
-        if ( connexion != null )
-            try {
-                 Fermeture de la connexion 
-                connection.close();
-            } catch ( SQLException ignore ) {
-                 Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
+        }
+        sql = "DELETE FROM NOTES WHERE MAIL = ?";
+        try (Connection connection = DriverManager.getConnection( this.url, this.utilisateur, this.motDePasse );
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.executeUpdate();
             }
+        }catch (SQLException e){
+            throw e;
+        }
+        sql = "DELETE FROM TUTEUR WHERE MAIL= ?";
+        try (Connection connection = DriverManager.getConnection( this.url, this.utilisateur, this.motDePasse );
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.executeUpdate();
+            }
+        }catch (SQLException e){
+            throw e;
+        }finally {
+            if ( connexion != null )
+                try {
+                    Fermeture de la connexion 
+                    connection.close();
+                } catch ( SQLException ignore ) {
+                    Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
+                }
         }
     }
     */
+    
+    public void ajouterNote(String email, int note) throws SQLException{
+        String sql = "INSERT INTO NOTES(note,mail) VALUES (?,?)";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setInt(1, note);
+            statement.setString(2, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+    
+    public void modifierEmail(String oldEmail, String newEmail) throws SQLException{
+        
+        Tuteur t = afficherTuteur(oldEmail);
+        ajouterTuteur(newEmail,t.getSexe(),t.getDescription());
+        
+        String sql = "SELECT * FROM NOTES WHERE MAIL = ?";
+        try (Connection connection = myDataSource.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, oldEmail);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                ajouterNote(newEmail,rs.getInt("NOTE"));
+            }
+        }catch (SQLException e){
+            throw e;
+        }
+        
+        for (int i=0;i<t.getCategories().size();i++){
+            ajouterInteretTuteur(t.getCategories().get(i), newEmail);
+        }
+        
+        supprimerTuteur(oldEmail);
+        
+    }
+    
+    public void modifierSexe(String email, String sexe) throws SQLException{
+        String sql = "UPDATE TUTEUR SET SEXE = ? WHERE MAIL = ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1,sexe);
+            statement.setString(2, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+    
+    public void modifierDescription(String email, String description) throws SQLException{
+        String sql = "UPDATE TUTEUR SET DESCRIPTION = ? WHERE MAIL = ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1,description);
+            statement.setString(2, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+    
+    public Tuteur afficherTuteur(String email) throws SQLException{
+        Tuteur tuteur = null;
+        String sql = "SELECT * FROM TUTEUR WHERE MAIL = ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1,email);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                String sexe = rs.getString("SEXE");
+                String description = rs.getString("DESCRIPTION");
+                double moyenne = afficherMoyenne(email);
+                List<String> categories = afficherCategories(email);
+                tuteur = new Tuteur(email,sexe,description,moyenne,categories);
+            }
+        }catch (SQLException e){
+            throw e;
+        }
+        
+        return tuteur;
+    }
     
     public void ajouterTuteur(String email, String sexe, String description) throws SQLException{
         String sql = "INSERT INTO TUTEUR VALUES (?,?,?)";
@@ -259,6 +357,31 @@ public class DAO {
             throw e;
         }
     }
+    /*
+    méthode pour mysql:
+    public void ajouterTuteur(String email, String sexe, String description) throws SQLException{
+        String sql = "INSERT INTO TUTEUR VALUES (?,?,?)";
+        
+        try (Connection connection = DriverManager.getConnection( this.url, this.utilisateur, this.motDePasse );
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.setString(2, sexe);
+            statement.setString(3, description);
+            statement.executeUpdate();
+            }
+        }catch (SQLException e){
+            throw e;
+        } finally {
+        if ( connexion != null )
+            try {
+                 Fermeture de la connexion 
+                connection.close();
+            } catch ( SQLException ignore ) {
+                 Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
+            }
+        }
+    }
+    */
     
     public void ajouterInteretTuteur(String categorie,String email) throws SQLException{
         String sql = "INSERT INTO INTERETS(categorie,mail) VALUES(?,?)";
@@ -271,6 +394,30 @@ public class DAO {
             throw e;
         }
     }
+    /*
+    méthode pour mysql:
+    public void ajouterInteretTuteur(String categorie,String email) throws SQLException{
+        String sql = "INSERT INTO INTERETS(categorie,mail) VALUES(?,?)";
+        
+        try (Connection connection = DriverManager.getConnection( this.url, this.utilisateur, this.motDePasse );
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, categorie);
+            statement.setString(2, email);
+            statement.executeUpdate();
+            }
+        }catch (SQLException e){
+            throw e;
+        } finally {
+        if ( connexion != null )
+            try {
+                 Fermeture de la connexion 
+                connection.close();
+            } catch ( SQLException ignore ) {
+                 Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
+            }
+        }
+    }
+    */
     
     public void supprimerInteretTuteur(String email, String categorie) throws SQLException{
         String sql = "DELETE FROM INTERETS WHERE MAIL = ? AND CATEGORIE = ?";
@@ -283,5 +430,29 @@ public class DAO {
             throw e;
         }
     }
+    /*
+    méthode pour mysql:
+    public void supprimerInteretTuteur(String email, String categorie) throws SQLException{
+        String sql = "DELETE FROM INTERETS WHERE MAIL = ? AND CATEGORIE = ?";
+        
+        try (Connection connection = DriverManager.getConnection( this.url, this.utilisateur, this.motDePasse );
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.setString(2, categorie);
+            statement.executeUpdate();
+            }
+        }catch (SQLException e){
+            throw e;
+        } finally {
+        if ( connexion != null )
+            try {
+                 Fermeture de la connexion 
+                connection.close();
+            } catch ( SQLException ignore ) {
+                 Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
+            }
+        }
+    }
+    */
     
 }
