@@ -138,13 +138,12 @@ public class DAO {
         }
     }
     
-    public void ajouterInteretTuteur(int id_interet,String categorie,String email) throws SQLException{
-        String sql = "INSERT INTO INTERETS (?,?,?)";
+    public void ajouterInteretTuteur(String categorie,String email) throws SQLException{
+        String sql = "INSERT INTO INTERETS (?,?)";
         try (Connection myConnection = myDataSource.getConnection();
                 PreparedStatement statement = myConnection.prepareStatement(sql)) {
-            statement.setInt(1, id_interet);
-            statement.setString(2, categorie);
-            statement.setString(3, email);
+            statement.setString(1, categorie);
+            statement.setString(2, email);
             statement.executeUpdate();
         } catch (SQLException e) {
             throw e;

@@ -8,7 +8,7 @@
 CREATE TABLE TUTEUR IF NOT EXISTS
 {
     mail VARCHAR(100),
-    sexe BOOLEAN NOT NULL,
+    sexe SMALLINT DEFAULT 0 NOT NULL CHECK (sexe = 0 OR sexe = 1),
     description VARCHAR(255) NOT NULL,
     
     PRIMARY KEY (mail)
@@ -17,7 +17,7 @@ CREATE TABLE TUTEUR IF NOT EXISTS
 
 CREATE TABLE NOTES IF NOT EXISTS
 {
-    id_notes INT,
+    id_notes INT AUTO_INCREMENT,
     note INT NOT NULL,
     mail varchar(100) NOT NULL,
 
@@ -28,7 +28,7 @@ CREATE TABLE NOTES IF NOT EXISTS
 
 CREATE TABLE INTERETS IF NOT EXISTS
 {
-    id_interets INT,
+    id_interets INT AUTO_INCREMENT,
     Categorie VARCHAR(100) NOT NULL,
     mail VARCHAR(100) NOT NULL,
 
