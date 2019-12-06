@@ -15,6 +15,29 @@
         <link rel="stylesheet" href="css/config.css">
     </head>
     <body>
+        
+        
+            <!-- En tête -->
+            <section class="row justify-content">
+                <!-- Bouton retour accueil -->
+                <div class="col-lg-3">
+                    <a href="index.jsp">
+                        <img src="Images/accueil.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    </a>
+                </div>
+                
+                <div class="col-lg-6"></div>
+                
+                <!-- bouton retour -->
+                <div class="col-lg-3">
+                    <a href="index.jsp">
+                        <img src="Images/retour.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    </a>
+                </div>
+            </section>
+            
+            
+            
         <div class="container-fluid">            
             <section class="row justify-content">
                 
@@ -62,7 +85,7 @@
                     
                     <!-- Partie restauration -->
                     <div class="col-lg-3 col-md-3">
-                    <a href="nourriture.jsp">
+                    <a href="Feuilles/nourriture.jsp">
                         <div class="row size-image-Logos"><img src="Images/LogoRestauration.png" class="img-fluid rounded" alt="Responsive image"></div>
                         <div class="row"><div class="col-lg-11 col-md-11 text-center">Restauration</div></div>
                     </a>
