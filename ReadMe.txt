@@ -1,0 +1,1 @@
+Nous n'avons pas pu héberger le site sur le serveur OVH à cause d'une installation longue en utilisant J2EE sur le server Ubuntu.
