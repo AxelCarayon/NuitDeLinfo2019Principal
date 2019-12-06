@@ -92,7 +92,7 @@ public class DAO {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 String email = rs.getString("MAIL");
-                int sexe = rs.getInt("SEXE");
+                String sexe = rs.getString("SEXE");
                 String description = rs.getString("DESCRIPTION");
                 double moyenne = afficherMoyenne(email);
                 List<String> categories = afficherCategories(email);
@@ -125,12 +125,12 @@ public class DAO {
         }
     }
     
-    public void ajouterTuteur(String email, int sexe, String description) throws SQLException{
-        String sql = "INSERT INTO TUTEUR (?,?,?)";
+    public void ajouterTuteur(String email, String sexe, String description) throws SQLException{
+        String sql = "INSERT INTO TUTEUR VALUES (?,?,?)";
         try (Connection myConnection = myDataSource.getConnection();
                 PreparedStatement statement = myConnection.prepareStatement(sql)) {
             statement.setString(1, email);
-            statement.setInt(2, sexe);
+            statement.setString(2, sexe);
             statement.setString(3, description);
             statement.executeUpdate();
         } catch (SQLException e) {
