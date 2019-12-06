@@ -15,8 +15,8 @@
             <section class="row justify-content">
                 <!-- Bouton retour accueil -->
                 <div class="col-lg-3">
-                    <a href="index.jsp">
-                        <img src="Images/accueil.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    <a href="../index.jsp">
+                        <img src="../Images/accueil.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
                     </a>
                 </div>
                 
@@ -26,8 +26,8 @@
                 
                 <!-- bouton retour -->
                 <div class="col-lg-3">
-                    <a href="index.jsp">
-                        <img src="Images/retour.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    <a href="../index.jsp">
+                        <img src="../Images/retour.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
                     </a>
                 </div>
             </section>
