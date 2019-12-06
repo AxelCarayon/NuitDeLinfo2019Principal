@@ -10,6 +10,10 @@
     <body>  
         <div class="container-fluid">
             <div style="height:100px;" class = "row align-items"></div>
+            <div class="col-lg-12 text-center">
+                <img src="../Images/logo.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+            </div>
+            <div style="height:100px;" class = "row align-items"></div>
             <section class="row justify-content">
                 <div class="col-lg-12 text-center"></div>
             </section>
@@ -20,7 +24,7 @@
                 </div>
             </div>
         </div>
-        
+
     </section>
     <div style="height:100px;" class ="row align-items"></div>
     <div style="height:100px;" class = "row align-items"></div>
