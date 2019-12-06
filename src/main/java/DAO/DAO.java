@@ -107,7 +107,7 @@ public class DAO {
     
     
     public void supprimerTuteur(String email) throws SQLException{
-        String sql = "DELETE FROM INTERETS WHERE EMAIL = ?";
+        String sql = "DELETE FROM INTERETS WHERE MAIL = ?";
         try (Connection myConnection = myDataSource.getConnection();
                 PreparedStatement statement = myConnection.prepareStatement(sql)) {
             statement.setString(1, email);
@@ -115,7 +115,15 @@ public class DAO {
         } catch (SQLException e) {
             throw e;
         }
-        sql = "DELETE FROM TUTEUR WHERE EMAIL= ?";
+        sql = "DELETE FROM NOTES WHERE MAIL = ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
+        sql = "DELETE FROM TUTEUR WHERE MAIL= ?";
         try (Connection myConnection = myDataSource.getConnection();
                 PreparedStatement statement = myConnection.prepareStatement(sql)) {
             statement.setString(1, email);
