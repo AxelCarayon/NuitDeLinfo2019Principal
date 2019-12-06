@@ -13,3 +13,19 @@ body{
     font-family: 'Comic Sans MS';
 }
 
+.size-image-categorie{
+    width: 200px;
+    height: auto;
+}
+
+.button-choix{
+    width: 400px;
+    line-height:120px;
+    text-align:center;
+}
+
+.button-choix:hover {
+color:blue;
+text-decoration:none;
+}
+
