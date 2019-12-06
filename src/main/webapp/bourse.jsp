@@ -65,7 +65,7 @@
             
             <section><div class="row">
                 <div class="col-lg-12 text-center">
-                    <a href="#" class="btn btn-dark" role=""button aria-pressed ="true">J'ai rencontré un problème !</a>
+                    <a href="bourseProblemes.jsp" class="btn btn-dark" role=""button aria-pressed ="true">J'ai rencontré un problème !</a>
                 </div>
             </section></div>
             
