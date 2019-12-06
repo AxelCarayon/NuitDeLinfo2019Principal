@@ -105,20 +105,62 @@ public class DAO {
         return resultat;
     } 
     
-    public void supprimerTuteur() throws SQLException{
-        //TODO
+    
+    public void supprimerTuteur(String email) throws SQLException{
+        String sql = "DELETE FROM INTERETS WHERE EMAIL = ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
+        sql = "DELETE FROM TUTEUR WHERE EMAIL= ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
     }
     
-    public void ajouterTuteur() throws SQLException{
-        //TODO
+    public void ajouterTuteur(String email, int sexe, String description) throws SQLException{
+        String sql = "INSERT INTO TUTEUR (?,?,?)";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.setInt(2, sexe);
+            statement.setString(3, description);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
     }
     
-    public void ajouterInteretTuteur() throws SQLException{
-        //TODO
+    public void ajouterInteretTuteur(int id_interet,String categorie,String email) throws SQLException{
+        String sql = "INSERT INTO INTERETS (?,?,?)";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setInt(1, id_interet);
+            statement.setString(2, categorie);
+            statement.setString(3, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
     }
     
-    public void supprimerInteretTuteur() throws SQLException{
-        //TODO
+    public void supprimerInteretTuteur(String email, String categorie) throws SQLException{
+        String sql = "DELETE FROM INTERETS WHERE EMAIL = ? AND CATEGORIE = ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.setString(2, categorie);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
     }
     
 }
