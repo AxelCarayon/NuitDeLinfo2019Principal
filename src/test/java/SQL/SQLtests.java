@@ -65,6 +65,18 @@ public class SQLtests {
         assertEquals(resultat,dao.afficherCategories("axel.carayon@gmail.com"));
     }
     
+    @org.junit.Test
+    public void listeTuteursTest() throws SQLException{
+        List<Tuteur> resultat = new ArrayList<>();
+        Tuteur t1 = new Tuteur("axel.carayon@gmail.com","H","Axel",dao.afficherMoyenne("axel.carayon@gmail.com"),dao.afficherCategories("axel.carayon@gmail.com"));
+        Tuteur t2 = new Tuteur("Laurie.Coumes@gmail.com","F","Laurie",dao.afficherMoyenne("Laurie.Coumes@gmail.com"),dao.afficherCategories("Laurie.Coumes@gmail.com"));
+        Tuteur t3 = new Tuteur("malo.bosc@gmail.com","H","Malo",dao.afficherMoyenne("malo.bosc@gmail.com"),dao.afficherCategories("malo.bosc@gmail.com"));
+        resultat.add(t1);
+        resultat.add(t2);
+        resultat.add(t3);
+        assertEquals(resultat,dao.listeTuteurs());
+    }
+    
     
     public static DataSource getDataSource() throws SQLException {
         org.hsqldb.jdbc.JDBCDataSource ds = new org.hsqldb.jdbc.JDBCDataSource();
