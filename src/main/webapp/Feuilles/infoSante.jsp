@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-lg-2"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Mutuelle</a>
+                        <a href="mutuelle.jsp" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Mutuelle</a>
                         <br/><h5 class="text-center font-weight-light">Cliquez ici pour accéder aux mutuelles</h4>
                     </div>
                 </div>    
