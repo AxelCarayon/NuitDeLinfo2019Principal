@@ -5,33 +5,33 @@
 
 
 
-CREATE TABLE TUTEUR IF NOT EXISTS
-{
+CREATE TABLE TUTEUR
+(
     mail VARCHAR(100),
-    sexe SMALLINT DEFAULT 0 NOT NULL CHECK (sexe = 0 OR sexe = 1),
+    sexe VARCHAR(1) NOT NULL,
     description VARCHAR(255) NOT NULL,
     
     PRIMARY KEY (mail)
-};
+);
 
 
-CREATE TABLE NOTES IF NOT EXISTS
-{
-    id_notes INT AUTO_INCREMENT,
+CREATE TABLE NOTES
+(
+    id_notes INT,
     note INT NOT NULL,
     mail varchar(100) NOT NULL,
 
     PRIMARY KEY (id_notes),
     FOREIGN KEY (mail) REFERENCES TUTEUR(mail)
-};
+);
 
 
-CREATE TABLE INTERETS IF NOT EXISTS
-{
-    id_interets INT AUTO_INCREMENT,
+CREATE TABLE INTERETS
+(
+    id_interets INT,
     Categorie VARCHAR(100) NOT NULL,
     mail VARCHAR(100) NOT NULL,
 
     PRIMARY KEY(id_interets),
     FOREIGN KEY (mail) REFERENCES TUTEUR(mail)
-};
+);
