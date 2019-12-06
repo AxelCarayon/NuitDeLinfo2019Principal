@@ -162,6 +162,29 @@ public class DAO {
         return resultat;
     } 
     
+    public List<Tuteur> listeTuteursCategorie(String categorie) throws SQLException{
+        List<Tuteur> resultat = new ArrayList<>();
+        String sql = "SELECT * FROM TUTEUR";
+        try (Connection connection = myDataSource.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                String email = rs.getString("MAIL");
+                String sexe = rs.getString("SEXE");
+                String description = rs.getString("DESCRIPTION");
+                double moyenne = afficherMoyenne(email);
+                List<String> categories = afficherCategories(email);
+                if (categories.contains(categorie)){
+                    Tuteur tuteur = new Tuteur(email,sexe,description,moyenne,categories);
+                    resultat.add(tuteur);
+                }
+            }
+        }catch (SQLException e){
+            throw e;
+        }
+        return resultat;
+    }
+    
     /*
     méthode pour mysql:
     public List<Tuteur> listeTuteurs() throws SQLException{
