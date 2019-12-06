@@ -31,4 +31,6 @@ INSERT INTO NOTES (note,mail) VALUES(8,'blabla@bla.fr');
 INSERT INTO NOTES (note,mail) VALUES(2,'blabla@bla.fr');
 
 INSERT INTO INTERETS(categorie,mail) VALUES('grillades','blabla@bla.fr');
+INSERT INTO INTERETS(categorie,mail) VALUES('bouffe','blabla@bla.fr');
 
+DELETE FROM INTERETS WHERE MAIL = 'blabla@bla.fr' AND CATEGORIE = 'bouffe';

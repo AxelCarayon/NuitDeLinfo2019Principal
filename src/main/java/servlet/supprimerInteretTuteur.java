@@ -26,8 +26,8 @@ import com.google.gson.*;
  *
  * @author lauriecoumes
  */
-@WebServlet(name = "ajouterInteretTuteur", urlPatterns = {"/ajouterInteretTuteur"})
-public class ajouterInteretTuteur extends HttpServlet {
+@WebServlet(name = "supprimerInteretTuteur", urlPatterns = {"/supprimerInteretTuteur"})
+public class supprimerInteretTuteur extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -39,8 +39,8 @@ public class ajouterInteretTuteur extends HttpServlet {
         String message;
         Properties resultat = new Properties();
         try {
-            dao.ajouterInteretTuteur(categorie,mail);
-            message = String.format("Interet %s ajouté pour le tuteur %s",categorie,mail);
+            dao.supprimerInteretTuteur(mail,categorie);
+            message = String.format("Interet %s supprimé pour le tuteur %s",categorie,mail);
             resultat.put("message",message);
         } catch (SQLException ex) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);

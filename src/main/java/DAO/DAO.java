@@ -138,22 +138,20 @@ public class DAO {
         }
     }
     
-    public int ajouterInteretTuteur(String categorie,String email) throws SQLException{
-        int r;
+    public void ajouterInteretTuteur(String categorie,String email) throws SQLException{
         String sql = "INSERT INTO INTERETS(categorie,mail) VALUES(?,?)";
         try (Connection myConnection = myDataSource.getConnection();
                 PreparedStatement statement = myConnection.prepareStatement(sql)) {
             statement.setString(1, categorie);
             statement.setString(2, email);
-            r = statement.executeUpdate();
+            statement.executeUpdate();
         } catch (SQLException e) {
             throw e;
         }
-        return r;
     }
     
     public void supprimerInteretTuteur(String email, String categorie) throws SQLException{
-        String sql = "DELETE FROM INTERETS WHERE EMAIL = ? AND CATEGORIE = ?";
+        String sql = "DELETE FROM INTERETS WHERE MAIL = ? AND CATEGORIE = ?";
         try (Connection myConnection = myDataSource.getConnection();
                 PreparedStatement statement = myConnection.prepareStatement(sql)) {
             statement.setString(1, email);
