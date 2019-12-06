@@ -17,7 +17,7 @@
             </section>
             <div style="height:100px;" class = "row align-items">               
                 <div class="col-lg-12">                    
-                    <h2 class="text-center font-weight-bold">Où se restaurer ?</h2>
+                    <h2 class="text-center font-weight-bold">Comment se restaurer ?</h2>
                 </div>
             </div>
             <section class="row justify-content">
