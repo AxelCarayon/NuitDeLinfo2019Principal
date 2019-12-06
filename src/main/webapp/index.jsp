@@ -29,9 +29,6 @@
                 </div>
             </section>
             
-            
-            <div style="height:100px;" class = "row align-items"></div>
-            <div style="height:100px;" class = "row align-items"></div>
             <div style="height:100px;" class = "row align-items">
                 <div class="col-lg-12">
                     <h2 class="text-center font-weight-bold">Bienvenue sur SOSEtudiant <br/>Choisissez votre profil !</h2>
