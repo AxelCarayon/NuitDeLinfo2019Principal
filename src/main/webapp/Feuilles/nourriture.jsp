@@ -3,9 +3,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Sante</title>
-        <link rel="stylesheet" href="bootstrap-4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/config.css">
+        <title>Nourriture</title>
+        <link rel="stylesheet" href="../bootstrap-4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/config.css">
     </head>
     <body>  
         
@@ -14,26 +14,17 @@
             <section class="row justify-content">
                 <!-- Bouton retour accueil -->
                 <div class="col-lg-3">
-                    <a href="index.jsp">
-                        <img src="Images/accueil.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    <a href="../index.jsp">
+                        <img src="../Images/accueil.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
                     </a>
                 </div>
                 
-                <div class="col-lg-3"></div>
-                
-                
-                <!-- Icone de Demande d'aide à un autre étudiant-->
-                <div class="col-lg-3">
-                    <a href="demandeAide.jsp">
-                        <img src="Images/bulleDialogue.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
-                    </a>
-                </div>
-                
+                <div class="col-lg-6"></div>
                 
                 <!-- bouton retour -->
                 <div class="col-lg-3">
-                    <a href="index.jsp">
-                        <img src="Images/retour.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    <a href="../index.jsp">
+                        <img src="../Images/retour.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
                     </a>
                 </div>
             </section>
@@ -44,12 +35,12 @@
             <div style="height:100px;" class = "row align-items"></div>
             <section class="row justify-content">
                 <div class="col-lg-12 text-center">
-                    <img src="Images/sante.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    <img src="../Images/nourriture.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
                 </div>
             </section>
             <div style="height:100px;" class = "row align-items">               
                 <div class="col-lg-12">                    
-                    <h2 class="text-center font-weight-bold">Informez vous sur la santé !</h2>
+                    <h2 class="text-center font-weight-bold">Comment vous nourrir ?</h2>
                 </div>
             </div>
             <section class="row justify-content">
@@ -58,13 +49,13 @@
                 <div class="row col-lg-10">
                     <div class="col-lg-12"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Organismes</a>
-                        <br/><h5 class="text-center font-weight-light">Retrouvez les organismes de la santé</h4>
+                        <a href="restaurantsDisponibles.jsp" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Organisations disponibles</a>
+                        <br/><h5 class="text-center font-weight-light">Retrouvez les enseignes où manger</h4>
                     </div>
                     <div class="col-lg-2"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Informations</a>
-                        <br/><h5 class="text-center font-weight-light">Cliquez ici pour accéder aux infos</h4>
+                        <a href="pageConstruction.jsp" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Informations</a>
+                        <br/><h5 class="text-center font-weight-light">Cliquez ici pour avoir plus d'informations</h4>
                     </div>
                 </div>    
                 <div class="col-lg-1"></div>

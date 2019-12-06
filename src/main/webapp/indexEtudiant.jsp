@@ -85,7 +85,7 @@
                     
                     <!-- Partie restauration -->
                     <div class="col-lg-3 col-md-3">
-                    <a href="nourriture.jsp">
+                    <a href="Feuilles/nourriture.jsp">
                         <div class="row size-image-Logos"><img src="Images/LogoRestauration.png" class="img-fluid rounded" alt="Responsive image"></div>
                         <div class="row"><div class="col-lg-11 col-md-11 text-center">Restauration</div></div>
                     </a>

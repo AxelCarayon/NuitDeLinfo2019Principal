@@ -12,6 +12,7 @@
             
             <!-- En tête -->
             <section class="row justify-content">
+                
                 <!-- Bouton retour accueil -->
                 <div class="col-lg-3">
                     <a href="#">
@@ -26,6 +27,9 @@
                     <a href="#">
                         <img src="Images/retour.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
                     </a>
+                </div>
+                <div class="col-lg-12 text-center">
+                    <img src="Images/logo.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
                 </div>
             </section>
             
