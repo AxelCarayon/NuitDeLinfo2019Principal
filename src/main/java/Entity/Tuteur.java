@@ -21,13 +21,9 @@ public class Tuteur {
     private List<String> categories;
     
 
-    public Tuteur(String email, int sexe, String description, double moyenne, List<String> categories) {
+    public Tuteur(String email, String sexe, String description, double moyenne, List<String> categories) {
         this.email = email;
-        if (sexe == 1){
-            this.sexe = "Homme";
-        }else{
-            this.sexe = "Femme";
-        }
+        this.sexe = sexe;
         this.description = description;
         this.moyenne = moyenne;
         this.categories = categories;
