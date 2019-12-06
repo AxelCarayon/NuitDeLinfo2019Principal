@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Categories</title>
         <link rel="stylesheet" href="bootstrap-4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/config.css">
     </head>
@@ -21,8 +21,10 @@
                 <div class="row  text-center align-items-center">
                     <div class="col-lg-1 col-md-1"></div>
                     <div class="col-lg-3 col-md-3">
-                        <div class="row size-image-Logos"><img src="Images/LogoBourse.png" class="img-fluid rounded" alt="Responsive image"></div>
-                        <div class="col-lg-11 col-md-11 text-center">Bourses</div>
+                        <a href="bourse.jsp">
+                            <div class="row size-image-Logos"><img src="Images/LogoBourse.png" class="img-fluid rounded" alt="Responsive image"></div>
+                            <div class="col-lg-11 col-md-11 text-center">Bourses</div>
+                        </a>
                     </div>
                     <div class="col-lg-4 col-md-4">
                     <div class="row">
