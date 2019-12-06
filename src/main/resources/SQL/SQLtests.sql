@@ -25,3 +25,10 @@ CREATE TABLE INTERETS
     Categorie VARCHAR(100) NOT NULL,
     mail VARCHAR(100) NOT NULL REFERENCES TUTEUR(MAIL)
 );
+
+INSERT INTO TUTEUR VALUES('blabla@bla.fr','M','Il était une fois 3 petits cochons');
+INSERT INTO NOTES (note,mail) VALUES(8,'blabla@bla.fr');
+INSERT INTO NOTES (note,mail) VALUES(2,'blabla@bla.fr');
+
+INSERT INTO INTERETS(categorie,mail) VALUES('grillades','blabla@bla.fr');
+
