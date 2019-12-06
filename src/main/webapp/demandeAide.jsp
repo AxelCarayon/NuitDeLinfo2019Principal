@@ -40,6 +40,8 @@
     }
         </script>
         <title>JSP Page</title>
+        <link rel="stylesheet" href="bootstrap-4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/config.css">
     </head>
     <body>
         <div class="container-fluid">
