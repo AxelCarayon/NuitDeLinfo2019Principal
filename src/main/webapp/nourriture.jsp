@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Logement</title>
+        <title>Nourriture</title>
         <link rel="stylesheet" href="bootstrap-4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/config.css">
     </head>
@@ -44,12 +44,12 @@
             <div style="height:100px;" class = "row align-items"></div>
             <section class="row justify-content">
                 <div class="col-lg-12 text-center">
-                    <img src="Images/logement.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    <img src="Images/nourriture.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
                 </div>
             </section>
             <div style="height:100px;" class = "row align-items">               
                 <div class="col-lg-12">                    
-                    <h2 class="text-center font-weight-bold">Informez vous sur le logement !</h2>
+                    <h2 class="text-center font-weight-bold">Comment vous nourrir ?</h2>
                 </div>
             </div>
             <section class="row justify-content">
@@ -58,13 +58,13 @@
                 <div class="row col-lg-10">
                     <div class="col-lg-12"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Boursier</a>
-                        <br/><h5 class="text-center font-weight-light">CLiquez ici si vous disposez des bourses</h4>
+                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Organisation disponibles</a>
+                        <br/><h5 class="text-center font-weight-light">Retrouvez les enseignes où manger</h4>
                     </div>
                     <div class="col-lg-2"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Non boursier</a>
-                        <br/><h5 class="text-center font-weight-light">Cliquez ici si vous n'avez pas les bourses</h4>
+                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Informations</a>
+                        <br/><h5 class="text-center font-weight-light">Cliquez ici pour avoir plus d'informations</h4>
                     </div>
                 </div>    
                 <div class="col-lg-1"></div>

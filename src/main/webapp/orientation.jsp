@@ -20,7 +20,16 @@
                     </a>
                 </div>
                 
-                <div class="col-lg-6"></div>
+                <div class="col-lg-3"></div>
+                
+                
+                <!-- Icone de Demande d'aide à un autre étudiant-->
+                <div class="col-lg-3">
+                    <a href="demandeAide.jsp">
+                        <img src="Images/bulleDialogue.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    </a>
+                </div>
+                
                 
                 <!-- bouton retour -->
                 <div class="col-lg-3">
