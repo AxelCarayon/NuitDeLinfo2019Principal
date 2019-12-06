@@ -10,7 +10,7 @@ and open the template in the editor.
 body{
     background-image: url("../Images/fondEcran.png");
     background-size: cover;
-    font-family: 'Comic Sans MS';
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 .size-image-categorie{
@@ -20,7 +20,7 @@ body{
 
 .button-choix{
     width: 400px;
-    line-height:120px;
+    line-height:100px;
     text-align:center;
 }
 

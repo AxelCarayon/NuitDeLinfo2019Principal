@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Bourse</title>
+        <title>Orientation</title>
         <link rel="stylesheet" href="bootstrap-4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/config.css">
     </head>
@@ -12,12 +12,12 @@
             <div style="height:100px;" class = "row align-items"></div>
             <section class="row justify-content">
                 <div class="col-lg-12 text-center">
-                    <img src="Images/bourse.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    <img src="Images/orientation.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
                 </div>
             </section>
             <div style="height:100px;" class = "row align-items">               
                 <div class="col-lg-12">                    
-                    <h2 class="text-center font-weight-bold">Informez vous sur les bourses !</h2>
+                    <h2 class="text-center font-weight-bold">Informez vous sur votre orientation !</h2>
                 </div>
             </div>
             <section class="row justify-content">
@@ -26,13 +26,13 @@
                 <div class="row col-lg-10">
                     <div class="col-lg-12"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Simulation</a>
-                        <br/><h5 class="text-center font-weight-light">Cliquez ici pour accéder à la simulation</h4>
+                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Je sais ce que je veux faire</a>
+                        <br/><h5 class="text-center font-weight-light">Cliquez ici si vous avez une idée du domaine</h4>
                     </div>
                     <div class="col-lg-2"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Boursier</a>
-                        <br/><h5 class="text-center font-weight-light">Cliquez ici pour accéder aux infos</h4>
+                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Je ne sais pas ce que je veux faire</a>
+                        <br/><h5 class="text-center font-weight-light">Cliquez ici si vous ne savez pas quoi faire</h4>
                     </div>
                 </div>    
                 <div class="col-lg-1"></div>
