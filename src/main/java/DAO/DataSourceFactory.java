@@ -30,9 +30,9 @@ public class DataSourceFactory {
     }
     
     /* Connexion à la base de données 
-    String url = "jdbc:mysql://localhost:3306/bdd_sdzee";
-    String utilisateur = "java";
-    String motDePasse = "SdZ_eE";
+    String url = "jdbc:mysql://51.83.255.12:21/sosetudiantdb";
+    String utilisateur = "admin";
+    String motDePasse = "admin";
     Connection connexion = null;
     try {
         connexion = DriverManager.getConnection( url, utilisateur, motDePasse );
