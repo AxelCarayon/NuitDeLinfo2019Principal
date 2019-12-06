@@ -133,6 +133,88 @@ public class DAO {
         }
     }
     
+    public void ajouterNote(String email, int note) throws SQLException{
+        String sql = "INSERT INTO NOTES(note,mail) VALUES (?,?)";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setInt(1, note);
+            statement.setString(2, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+    
+    public void modifierEmail(String oldEmail, String newEmail) throws SQLException{
+        
+        Tuteur t = afficherTuteur(oldEmail);
+        ajouterTuteur(newEmail,t.getSexe(),t.getDescription());
+        
+        String sql = "SELECT * FROM NOTES WHERE MAIL = ?";
+        try (Connection connection = myDataSource.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, oldEmail);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                ajouterNote(newEmail,rs.getInt("NOTE"));
+            }
+        }catch (SQLException e){
+            throw e;
+        }
+        
+        for (int i=0;i<t.getCategories().size();i++){
+            ajouterInteretTuteur(t.getCategories().get(i), newEmail);
+        }
+        
+        supprimerTuteur(oldEmail);
+        
+    }
+    
+    public void modifierSexe(String email, String sexe) throws SQLException{
+        String sql = "UPDATE TUTEUR SET SEXE = ? WHERE MAIL = ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1,sexe);
+            statement.setString(2, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+    
+    public void modifierDescription(String email, String description) throws SQLException{
+        String sql = "UPDATE TUTEUR SET DESCRIPTION = ? WHERE MAIL = ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1,description);
+            statement.setString(2, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+    
+    public Tuteur afficherTuteur(String email) throws SQLException{
+        Tuteur tuteur = null;
+        String sql = "SELECT * FROM TUTEUR WHERE MAIL = ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1,email);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                String sexe = rs.getString("SEXE");
+                String description = rs.getString("DESCRIPTION");
+                double moyenne = afficherMoyenne(email);
+                List<String> categories = afficherCategories(email);
+                tuteur = new Tuteur(email,sexe,description,moyenne,categories);
+            }
+        }catch (SQLException e){
+            throw e;
+        }
+        
+        return tuteur;
+    }
+    
     public void ajouterTuteur(String email, String sexe, String description) throws SQLException{
         String sql = "INSERT INTO TUTEUR VALUES (?,?,?)";
         try (Connection myConnection = myDataSource.getConnection();
