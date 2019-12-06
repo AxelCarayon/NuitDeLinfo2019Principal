@@ -50,6 +50,53 @@ public class Tuteur {
     public List<String> getCategories(){
         return categories;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.email);
+        hash = 59 * hash + Objects.hashCode(this.sexe);
+        hash = 59 * hash + Objects.hashCode(this.description);
+        hash = 59 * hash + (int) (Double.doubleToLongBits(this.moyenne) ^ (Double.doubleToLongBits(this.moyenne) >>> 32));
+        hash = 59 * hash + Objects.hashCode(this.categories);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Tuteur other = (Tuteur) obj;
+        if (Double.doubleToLongBits(this.moyenne) != Double.doubleToLongBits(other.moyenne)) {
+            return false;
+        }
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
+        if (!Objects.equals(this.sexe, other.sexe)) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        if (!Objects.equals(this.categories, other.categories)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Tuteur{" + "email=" + email + ", sexe=" + sexe + ", description=" + description + ", moyenne=" + moyenne + ", categories=" + categories + '}';
+    }
+    
     
     
 }

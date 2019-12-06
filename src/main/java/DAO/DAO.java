@@ -206,6 +206,14 @@ public class DAO {
         } catch (SQLException e) {
             throw e;
         }
+        sql = "DELETE FROM NOTES WHERE MAIL = ?";
+        try (Connection myConnection = myDataSource.getConnection();
+                PreparedStatement statement = myConnection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw e;
+        }
         sql = "DELETE FROM TUTEUR WHERE MAIL= ?";
         try (Connection myConnection = myDataSource.getConnection();
                 PreparedStatement statement = myConnection.prepareStatement(sql)) {
