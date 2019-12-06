@@ -97,6 +97,56 @@ public class SQLtests {
         
     }
     
+    @org.junit.Test
+    public void afficherTuteurTest() throws SQLException{
+        Tuteur t1 = new Tuteur("axel.carayon@gmail.com","H","Axel",dao.afficherMoyenne("axel.carayon@gmail.com"),dao.afficherCategories("axel.carayon@gmail.com"));
+        assertEquals(t1,dao.afficherTuteur("axel.carayon@gmail.com"));
+    }
+    
+    @org.junit.Test
+    public void ajouterNoteTest() throws SQLException{
+        dao.ajouterNote("axel.carayon@gmail.com", 10);
+        double moyenne = (10.+5.+2.+4.+8.+10.)/6.;
+        assertEquals(moyenne,dao.afficherMoyenne("axel.carayon@gmail.com"),0);
+        
+    }
+    
+    @org.junit.Test
+    public void modifierEmailTest() throws SQLException{
+        dao.modifierEmail("axel.carayon@gmail.com", "machin.bidule@gmail.com");
+        List<Tuteur> resultat = new ArrayList<>();
+        Tuteur t1 = new Tuteur("machin.bidule@gmail.com","H","Axel",dao.afficherMoyenne("machin.bidule@gmail.com"),dao.afficherCategories("machin.bidule@gmail.com"));
+        Tuteur t2 = new Tuteur("Laurie.Coumes@gmail.com","F","Laurie",dao.afficherMoyenne("Laurie.Coumes@gmail.com"),dao.afficherCategories("Laurie.Coumes@gmail.com"));
+        Tuteur t3 = new Tuteur("malo.bosc@gmail.com","H","Malo",dao.afficherMoyenne("malo.bosc@gmail.com"),dao.afficherCategories("malo.bosc@gmail.com"));
+        resultat.add(t2);
+        resultat.add(t1);
+        resultat.add(t3);
+        assertEquals(resultat,dao.listeTuteurs()); 
+    }
+    
+    @org.junit.Test
+    public void modifierSexeTest() throws SQLException{
+        dao.modifierSexe("axel.carayon@gmail.com","F");
+        assertEquals(dao.afficherTuteur("axel.carayon@gmail.com").getSexe(),"F");
+    }
+    
+    @org.junit.Test
+    public void modifierDescriptionTest() throws SQLException{
+        dao.modifierDescription("axel.carayon@gmail.com","Pouet");
+        assertEquals(dao.afficherTuteur("axel.carayon@gmail.com").getDescription(),"Pouet");
+    }
+    
+    @org.junit.Test
+    public void listeTuteursCategorieTest() throws SQLException{
+        List<Tuteur> resultat = new ArrayList<>();
+        Tuteur t2 = new Tuteur("Laurie.Coumes@gmail.com","F","Laurie",dao.afficherMoyenne("Laurie.Coumes@gmail.com"),dao.afficherCategories("Laurie.Coumes@gmail.com"));
+        Tuteur t3 = new Tuteur("malo.bosc@gmail.com","H","Malo",dao.afficherMoyenne("malo.bosc@gmail.com"),dao.afficherCategories("malo.bosc@gmail.com"));
+        resultat.add(t2);
+        resultat.add(t3);
+        
+        assertEquals(resultat,dao.listeTuteursCategorie("Alimentation"));
+    }
+    
     
     public static DataSource getDataSource() throws SQLException {
         org.hsqldb.jdbc.JDBCDataSource ds = new org.hsqldb.jdbc.JDBCDataSource();
