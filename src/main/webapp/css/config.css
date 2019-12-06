@@ -29,3 +29,16 @@ color:blue;
 text-decoration:none;
 }
 
+.list-group {
+     margin: 0 auto;
+     width: 300px; 
+}
+
+.list-group-item-action{
+    text-align:center
+}
+
+.list-group-item-action:hover {
+    background-color:#A3A6AA;
+    color:white;
+}

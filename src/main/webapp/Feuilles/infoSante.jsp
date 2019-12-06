@@ -12,7 +12,7 @@
             <div style="height:100px;" class = "row align-items"></div>
             <section class="row justify-content">
                 <div class="col-lg-12 text-center">
-                    <img src="../Images/bourse.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    <img src="../Images/sante.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
                 </div>
             </section>
             <div style="height:100px;" class = "row align-items">               
@@ -26,7 +26,7 @@
                 <div class="row col-lg-10">
                     <div class="col-lg-12"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Sécurité sociale</a>
+                        <a href="securiteSociale.jsp" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Sécurité sociale</a>
                         <br/><h5 class="text-center font-weight-light">Cliquez ici pour accéder à la sécurité sociale</h4>
                     </div>
                     <div class="col-lg-2"></div>
