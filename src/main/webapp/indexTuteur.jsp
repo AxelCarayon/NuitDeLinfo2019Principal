@@ -34,7 +34,7 @@
                     <div class="col-lg-1"></div>
                     <div class="col-lg-1"></div>
                 <div class="col-lg-16" align="center">                    
-                    <p class="row text-center font-weight-bold">Etre tuteur c'est echanger avec des étudiants qui se posent des questions!</p>
+                    <p class="row text-center font-weight-bold">Etre tuteur c'est échanger avec des étudiants qui se posent des questions!</p>
                     <p class="row text-center font-weight-bold">Etre tuteur c'est aider son prochain!</p>
                 </div>
                 
