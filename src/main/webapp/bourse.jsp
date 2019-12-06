@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-lg-2"></div>
                     <div class="col-lg-5 text-center">
-                        <a href="#" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Boursier</a>
+                        <a href="bourseListeDemarches.jsp" class="btn btn-success btn-lg active button-choix" role="button" aria-pressed="true">Boursier</a>
                         <br/><h5 class="text-center font-weight-light">Cliquez ici pour accéder aux informations destinées aux personnes boursières.</h5>
                     </div>
                 </div>    
@@ -64,8 +64,9 @@
             </section>
             
             <section><div class="row">
-                <div class=""
-                <a href="#" class="btn btn-dark" role=""button aria-pressed ="true">J'ai rencontré un problème !</a>
+                <div class="col-lg-12 text-center">
+                    <a href="#" class="btn btn-dark" role=""button aria-pressed ="true">J'ai rencontré un problème !</a>
+                </div>
             </section></div>
             
             <div style="height:100px;" class ="row align-items"></div>
