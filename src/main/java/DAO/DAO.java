@@ -21,9 +21,9 @@ import javax.sql.DataSource;
 public class DAO {
     
     private final DataSource myDataSource;
-    private String url = "jdbc:mysql://localhost:3306/sosetudiantdb";
-    private String utilisateur = "admin";
-    private String motDePasse = "admin";
+    private final String url = "jdbc:mysql://localhost:3306/sosetudiantdb";
+    private final String utilisateur = "admin";
+    private final String motDePasse = "admin";
     
     public DAO(DataSource dataSource) {
         this.myDataSource = dataSource;
@@ -132,7 +132,6 @@ public class DAO {
                  Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
             }
         }
-        return moyenne;
     }
     */
     
@@ -192,7 +191,6 @@ public class DAO {
                  Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
             }
         }
-        return moyenne;
     }
     */
     
@@ -235,14 +233,32 @@ public class DAO {
             }
         }catch (SQLException e){
             throw e;
-        } finally {
-        if ( connexion != null )
-            try {
-                 Fermeture de la connexion 
-                connection.close();
-            } catch ( SQLException ignore ) {
-                 Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
+        }
+        sql = "DELETE FROM NOTES WHERE MAIL = ?";
+        try (Connection connection = DriverManager.getConnection( this.url, this.utilisateur, this.motDePasse );
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.executeUpdate();
             }
+        }catch (SQLException e){
+            throw e;
+        }
+        sql = "DELETE FROM TUTEUR WHERE MAIL= ?";
+        try (Connection connection = DriverManager.getConnection( this.url, this.utilisateur, this.motDePasse );
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.executeUpdate();
+            }
+        }catch (SQLException e){
+            throw e;
+        }finally {
+            if ( connexion != null )
+                try {
+                    Fermeture de la connexion 
+                    connection.close();
+                } catch ( SQLException ignore ) {
+                    Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
+                }
         }
     }
     */
@@ -259,6 +275,31 @@ public class DAO {
             throw e;
         }
     }
+    /*
+    méthode pour mysql:
+    public void ajouterTuteur(String email, String sexe, String description) throws SQLException{
+        String sql = "INSERT INTO TUTEUR VALUES (?,?,?)";
+        
+        try (Connection connection = DriverManager.getConnection( this.url, this.utilisateur, this.motDePasse );
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.setString(2, sexe);
+            statement.setString(3, description);
+            statement.executeUpdate();
+            }
+        }catch (SQLException e){
+            throw e;
+        } finally {
+        if ( connexion != null )
+            try {
+                 Fermeture de la connexion 
+                connection.close();
+            } catch ( SQLException ignore ) {
+                 Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
+            }
+        }
+    }
+    */
     
     public void ajouterInteretTuteur(String categorie,String email) throws SQLException{
         String sql = "INSERT INTO INTERETS(categorie,mail) VALUES(?,?)";
@@ -271,6 +312,30 @@ public class DAO {
             throw e;
         }
     }
+    /*
+    méthode pour mysql:
+    public void ajouterInteretTuteur(String categorie,String email) throws SQLException{
+        String sql = "INSERT INTO INTERETS(categorie,mail) VALUES(?,?)";
+        
+        try (Connection connection = DriverManager.getConnection( this.url, this.utilisateur, this.motDePasse );
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, categorie);
+            statement.setString(2, email);
+            statement.executeUpdate();
+            }
+        }catch (SQLException e){
+            throw e;
+        } finally {
+        if ( connexion != null )
+            try {
+                 Fermeture de la connexion 
+                connection.close();
+            } catch ( SQLException ignore ) {
+                 Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
+            }
+        }
+    }
+    */
     
     public void supprimerInteretTuteur(String email, String categorie) throws SQLException{
         String sql = "DELETE FROM INTERETS WHERE MAIL = ? AND CATEGORIE = ?";
@@ -283,5 +348,29 @@ public class DAO {
             throw e;
         }
     }
+    /*
+    méthode pour mysql:
+    public void supprimerInteretTuteur(String email, String categorie) throws SQLException{
+        String sql = "DELETE FROM INTERETS WHERE MAIL = ? AND CATEGORIE = ?";
+        
+        try (Connection connection = DriverManager.getConnection( this.url, this.utilisateur, this.motDePasse );
+                PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            statement.setString(2, categorie);
+            statement.executeUpdate();
+            }
+        }catch (SQLException e){
+            throw e;
+        } finally {
+        if ( connexion != null )
+            try {
+                 Fermeture de la connexion 
+                connection.close();
+            } catch ( SQLException ignore ) {
+                 Si une erreur survient lors de la fermeture, il suffit de l'ignorer. 
+            }
+        }
+    }
+    */
     
 }
