@@ -14,6 +14,48 @@
         <link rel="stylesheet" href="css/config.css">
     </head>
     <body>
+        
+        
+            <!-- En tête -->
+            <section class="row justify-content">
+                <!-- Bouton retour accueil -->
+                <div class="col-lg-3">
+                    <a href="index.jsp">
+                        <img src="Images/accueil.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    </a>
+                </div>
+                
+                <div class="col-lg-6"></div>
+                
+                <!-- bouton retour -->
+                <div class="col-lg-3">
+                    <a href="bourse.jsp">
+                        <img src="Images/retour.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    </a>
+                </div>
+            </section>
+        
+        
+            <!-- En tête -->
+            <section class="row justify-content">
+                <!-- Bouton retour accueil -->
+                <div class="col-lg-3">
+                    <a href="index.jsp">
+                        <img src="Images/accueil.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    </a>
+                </div>
+                
+                <div class="col-lg-6"></div>
+                
+                <!-- bouton retour -->
+                <div class="col-lg-3">
+                    <a href="bourse.jsp">
+                        <img src="Images/retour.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    </a>
+                </div>
+            </section>
+            
+            
         <div class="container-fluid">
             <!-- logo -->
             <div style="height:100px;" class = "row align-items"></div>

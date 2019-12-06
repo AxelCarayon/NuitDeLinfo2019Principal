@@ -9,6 +9,27 @@
     </head>
     <body>  
         <div class="container-fluid">
+            
+            <!-- En tête -->
+            <section class="row justify-content">
+                <!-- Bouton retour accueil -->
+                <div class="col-lg-3">
+                    <a href="#">
+                        <img src="Images/accueil.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    </a>
+                </div>
+                
+                <div class="col-lg-6"></div>
+                
+                <!-- bouton retour -->
+                <div class="col-lg-3">
+                    <a href="#">
+                        <img src="Images/retour.png" class="img-fluid mx-auto size-image-categorie" alt="Responsive image">
+                    </a>
+                </div>
+            </section>
+            
+            
             <div style="height:100px;" class = "row align-items"></div>
             <div style="height:100px;" class = "row align-items"></div>
             <div style="height:100px;" class = "row align-items">
@@ -29,7 +50,7 @@
                     </div>
                     <div class="col-lg-2"></div>
                     <div class="col-lg-5">
-                        <a href=""> 
+                        <a href="indexTuteur.jsp"> 
                             <img src="Images/tuteur.png" class="img-fluid rounded" alt="Responsive image"</div>
                         </a>
                         <br/><h5 class="text-center font-weight-light">Cliquez ici pour apporter votre aide</h4>
